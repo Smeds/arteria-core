@@ -1,7 +1,7 @@
 from unittest import TestCase
 import arteria
 from arteria.web.routes import RouteService
-import mock
+from unittest import mock
 
 class RoutesServiceTest(TestCase):
     def test_help_doc_generated(self):
