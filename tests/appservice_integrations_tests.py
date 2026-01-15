@@ -16,8 +16,8 @@ class AppServiceTest(TestCase):
         app_config = app_svc.config_svc.get_app_config()
         logger_config = app_svc.config_svc.get_logger_config()
 
-        self.assertEquals(app_config["port"], 10000)
-        self.assertEquals(logger_config["version"], 1)
+        self.assertEqual(app_config["port"], 10000)
+        self.assertEqual(logger_config["version"], 1)
 
     def test_can_use_args(self):
         app_svc = AppService.create(
@@ -25,4 +25,4 @@ class AppServiceTest(TestCase):
                 config_root="{}/../templates/".format(self.this_file_path),
                 args=['--port', '1234'])
 
-        self.assertEquals(app_svc._port, 1234)
+        self.assertEqual(app_svc._port, 1234)
